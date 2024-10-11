@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Stores from "../components/Stores";
+import Island from "../components/Island";
+---
+
+<Layout title="Welcome to Astro.">
+  <Island client:load />
+  <Stores client:load />
+</Layout>
