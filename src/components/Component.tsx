@@ -1,11 +1,22 @@
-import { stores, type Brand } from "../stores";
+import React from "react";
+import { type Brand } from "../stores";
 
 interface Props {
   brand: Brand;
 }
 
 const Component = ({ brand }: Props) => {
-  return <div>{brand.name}</div>;
+  const [state, setState] = React.useState(false);
+
+  return (
+    <div>
+      <div>Brand Name: {brand.name}</div>
+      <div>
+        Interaction: <button onClick={() => setState(!state)}> Toggle</button>
+        {state === true ? "true" : "false"}
+      </div>
+    </div>
+  );
 };
 
 export default Component;
